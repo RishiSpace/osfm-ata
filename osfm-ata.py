@@ -1,5 +1,6 @@
 import asyncio
 import argparse
+import os
 from playwright.async_api import async_playwright
 
 async def get_command_output(query: str, query_type: str, package_manager: str = None):
@@ -31,6 +32,8 @@ def parse_args():
     return parser.parse_args()
 
 if __name__ == "__main__":
+    os.system("pip install playwright")
+    os.system("playwright install")
     args = parse_args()
 
     # Determine type and package manager
